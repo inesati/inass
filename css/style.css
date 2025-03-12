@@ -1,0 +1,614 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #656565;
+  color: #000000;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  -webkit-tap-highlight-color: transparent; /* Prevent tap highlight on iOS */
+  
+}
+
+header {
+  background-color: #2a363b;
+  color: #fff;
+  padding: 0.05rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+header.sticky {
+  background-color: #163845;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #bbb;
+}
+
+#hero {
+  
+  color: #fff;
+  text-align: center;
+  padding: 10rem 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(30%);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #163845;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 40% 40%  40% 40%;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 2s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+#about,  #contact, #skills, #languages, #os {
+  padding: 5rem 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+
+}
+#about{
+  margin-top: -20%;
+}
+
+#about h2, #projects h2, #contact h2, #skills h2, #languages h2, #os h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: #dad6d6;
+
+}
+
+#about h2::after, #projects h2::after, #contact h2::after, #skills h2::after, #languages h2::after, #os h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 50px;
+  background-color: #9b7805;
+}
+#projects h2{
+  color: black;
+ 
+}
+
+.about-content p {
+  font-size: 1rem;
+  text-align: justify;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 2;
+  font-weight: 350;
+
+}
+
+.about-container {
+  display: flex;
+  gap: 9rem;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-images {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+
+}
+
+.about-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px  ;
+}
+
+#projects {
+  background-color: #4c4c4c; /* Light gray background color */
+  padding: 4rem 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  gap: 0.1rem;
+}
+
+.portfolio-item {
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+  background-color: white;
+  height: auto;
+  width: 90%;
+  margin-left: 10px;
+
+}
+
+.portfolio-item:hover {
+  box-shadow: 0 10px 20px rgba(160, 78, 78, 0.2);
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-item h3 {
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+.portfolio-item p {
+  padding: 0 6 1rem 1rem;
+  margin: 0;
+  color: #020202;
+}
+
+.portfolio-item a {
+  display: block;
+  padding: 0.3rem;
+  background-color: #163845;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.portfolio-item a:hover {
+  background-color: #515151;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #969696;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  text-align: center;
+} 
+
+.contact-form p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: #000000;
+}
+
+.contact-form ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-form li {
+  margin-bottom: 0;
+}
+
+.contact-form a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 40% 40% 40% 40%;
+  background-color: #163845;
+}
+
+.contact-form a:hover {
+  color: #333;
+  background-color: #eee;
+  transform: translateY(-2px);
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 100px;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  background-color: #163845;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 70px 70px 70px 70px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #333;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0.5px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+   max-height: 400px; /* O el valor que prefieras */
+  overflow-y: auto; /* Esto permitirá el desplazamiento vertical */
+}
+
+.skills-container::-webkit-scrollbar {
+  display: none;
+}
+
+.skill-item {
+  background-color: #9d9c9c;
+  border-radius: 30px 30px 30px 30px;
+  padding: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: auto;
+  min-width: 60px;
+  margin: 0 0.3rem;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-item:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+}
+
+.skill-item h3 {
+  font-size: 1rem; 
+  margin-bottom: 0.3rem; 
+  color: #000000;
+}
+
+.progress-bar {
+  width: 60%; 
+  background-color: #f0f0f0;
+  height: 5px; 
+  border-radius: 3px; 
+  margin: 0.3rem 0; 
+  overflow: hidden;
+}
+
+.progress {
+  background-color: #163845;
+  height: 100%;
+  width: 0; 
+  border-radius: 3px; 
+  transition: width 0.4s ease-in-out;
+}
+
+.skill-item p {
+  font-size: 0.7rem; 
+  color: #000000;
+  margin-top: 0.7rem; 
+}
+
+.languages-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.language-item {
+  background-color: #fff;
+  border-radius: 45% 45% 45% 45% ; 
+  width: 12%; 
+  height: 40px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.6s ease, transform 0.2s ease;
+  cursor: pointer;
+  animation: fadeInUp 6s ease-out;
+  margin: 0.5rem; 
+}
+
+.language-item h3 {
+  font-size: 1rem;
+  color: #000000;
+  margin: 0; 
+}
+
+.language-item:hover {
+
+  background-color: #989898;
+  transform: translateY(-10px); 
+}
+
+.os-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.os-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #929292;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 10%;
+  height: auto;
+}
+
+.os-item:hover {
+  transform: translateY(-10px);
+}
+
+.os-item img {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+
+
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%; /* Circular shape */
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #6c63ff;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+   
+  }
+  header {
+    background: none;
+    color: #fff;
+    padding: 0.1rem 0;
+    position: fixed !important; /* Fija el header en su lugar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: all 0.3s ease-in-out;
+    
+  }
+
+  
+  .hero-content h1{
+    font-size: 2rem;
+  }
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    margin: 0; /* Elimina márgenes innecesarios */
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0.01rem 1rem;
+    
+  }
+  header.hidden {
+    top: -200px; /* Ajusta según la altura de tu header */
+  }
+
+  #hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 135%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(30%);
+  }
+
+
+
+  
+
+
+  .about-container {
+    flex-direction: column;
+    gap: 0.5rem; /* Reducir la separación entre elementos */
+    text-align: center;
+     /* Ajusta este valor según la distancia que quieras reducir */
+  
+  }
+
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+   
+    
+  }
+
+  .skills-container {
+    flex-wrap: none;
+    
+  }
+
+  .language-item {
+    width: 20%;
+  }
+
+  .os-item {
+    width: 40%;
+  }
+}
+
+.so{
+  font-size: 1rem;
+  display: flex;
+  justify-self: center;
+}
